@@ -23,18 +23,6 @@
 - **Backend**: Supabase (Database, Storage, Edge Functions)
 - **Authentication**: Clerk.dev
 - **Deployment**: Vercel
-
----
-
-## 📸 Screenshots
-
-| Home Page | Job Listings | Post a Job |
-|-----------|--------------|------------|
-| ![Home](<img width="20" height="7" alt="Screenshot 2025-07-17 001537" src="https://github.com/user-attachments/assets/57118ad6-695d-4a64-ba15-6e1156a87d85" />
-
-) |  ![Post Job](<img width="1537" height="802" alt="postjobs" src="https://github.com/user-attachments/assets/4ee7b1ff-039a-4c73-9ea7-e94c8443f63b" />
-) |
-
 ---
 
 ## 📦 Getting Started
