@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
+
 import { Link, useSearchParams } from "react-router-dom";
 import {
   SignedIn,
@@ -31,16 +33,32 @@ const Header = () => {
 
   return (
     <>
-      <nav className="py-4 flex justify-between items-center">
+      {/* <nav className="py-4 flex justify-between items-center"> */}
+      <motion.nav
+        className="py-4 flex justify-between items-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+      >
         <Link to="/">
-          <img src="/logo.png" className="h-20" alt="Hirrd Logo" />
+          {/* <img src="/logo.png" className="h-20" alt="Hirrd Logo" /> */}
+          <motion.img
+            src="/logo.png"
+            alt="Hirrd Logo"
+            className="h-20"
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 0.98 }}
+          />
         </Link>
 
         <div className="flex gap-8">
           <SignedOut>
+            <motion.div  whileHover={{ scale: 0.8}}
+              transition={{ duration: 0.5 ,type: "spring", stiffness: 900 }}>
             <Button variant="outline" onClick={() => setShowSignIn(true)}>
               Login
             </Button>
+            </motion.div>
           </SignedOut>
           <SignedIn>
             {user?.unsafeMetadata?.role === "recruiter" && (
@@ -74,7 +92,7 @@ const Header = () => {
             </UserButton>
           </SignedIn>
         </div>
-      </nav>
+      </motion.nav>
 
       {showSignIn && (
         <div

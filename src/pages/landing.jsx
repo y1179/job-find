@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
@@ -24,10 +25,17 @@ const LandingPage = () => {
           Find Your Dream Job
           <span className="flex items-center gap-2 sm:gap-6">
             and get
-            <img
+            {/* <img
               src="/logo.png"
               className="h-14 sm:h-24 lg:h-32"
               alt="Hirrd Logo"
+            /> */}
+            <motion.img
+              src="/logo.png"
+              alt="Hirrd Logo"
+              className="h-14 sm:h-24 lg:h-32"
+              whileHover={{ scale: 0.8 }}
+              transition={{ duration: 0.98 }}
             />
           </span>
         </h1>
@@ -37,16 +45,27 @@ const LandingPage = () => {
       </section>
       <div className="flex gap-6 justify-center">
         <Link to={"/jobs"}>
-          <Button variant="blue" size="xl">
-            Find Jobs
-          </Button>
-        </Link>
-        <Link to={"/post-job"}>
-          <Button variant="destructive" size="xl">
-            Post a Job
-          </Button>
-        </Link>
+            <motion.div
+              whileTap={ {scale: 0.77,rotateX: 15}}
+              transition={{ type: "spring", stiffness: 800 }}
+            >
+              <Button variant="blue" size="xl">
+                Find Jobs
+              </Button>
+            </motion.div>
+          </Link>
+          <Link to={"/post-job"}>
+           <motion.div
+              whileTap={ {scale: 0.77,rotateX: 19}}
+              transition={{ type: "spring", stiffness: 800 }}
+            >
+            <Button variant="destructive" size="xl">
+              Post a Job
+            </Button>
+            </motion.div>
+          </Link>
       </div>
+
       <Carousel
         plugins={[
           Autoplay({
